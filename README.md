@@ -1,53 +1,74 @@
-# Next.js & HeroUI Template
+## Technical Assignment
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+### Introduction
+This assignment helps us better understand your ability to solve problems and fulfil task requirements with technical solutions. We would like to get an impression of how you write code in the real world. We will be evaluating your communication skills, development capabilities, and your interpretation of what good, clean, production-ready code should look like.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+### Scenario
+Cinema operators such as Cathay are one of the most popular merchants we have. We want to build an app to help our users discover movies easily.
 
-## Technologies Used
+### Requirements
+Create a standalone movie app / mobile web(responsive UI) with the following screens:
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+### **Home screen with list of available movies**
 
-## How to Use
+- Ordered by release date (default), alphabetical, rating - can use dropdown 
+- Pull to refresh
+- Load when scrolled to bottom
+- Each movie to include:
+  - Poster/Backdrop image
+  - Title
+  - Popularity
+    
+### **Detail screen**
+Movie details should have the following:
+- Synopsis
+- Genres
+- Language
+- Duration
+- Book the movie (simulate opening of this [link](https://www.cathaycineplexes.com.sg/) in a web view)
 
-### Use the template with create-next-app
+### **Frontend Design**
+It is up to you to design the UI. Simple is good.
 
-To create a new project based on this template using `create-next-app`, run the following command:
+### **Backend**
+Use the API from [TMDb](https://developers.themoviedb.org/3/getting-started/introduction) as your data source.
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+You can use our API Key: `328c283cd27bd1877d9080ccb1604c91`
+  
+**Sample requests:**
+
+Listing
+
+```
+http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&primary_release_date.lte=2016-12-31&sort_by=release_date.desc&page=1
 ```
 
-### Install dependencies
+Detail
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
-npm install
+```
+http://api.themoviedb.org/3/movie/328111?api_key=328c283cd27bd1877d9080ccb1604c91
 ```
 
-### Run the development server
+### Technical requirements:
 
-```bash
-npm run dev
-```
+| iOS | Android | Web (ReactJS / NextJS) |
+| ---- | ------ | ------------- |
+| Minimum Swift 4.0 | Kotlin or Java | React based framework (ReactJS, create-react-app, etc) / SSR |
+| Usage of RxSwift + MVVM | RxJava or RxKotlin or Coroutine | CSS or SASS |
+| Dependency Injection | MVVM or VIPER | Context API & hooks |
+| | Dependency Injection - Dagger or Koin or Hilt | Use correct routes, param & URL (include navigation & not found routes) |
+| | Data Binding | Knowledge & experience using typescript is a must | |
 
-### Setup pnpm (optional)
+We expect unit tests for the main functionalities only.
+You can use third party libraries.
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+### Code Repo
+Please use this repo for your commits.
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+## Evaluation Criteria
+- Clean, readable, maintainable, and performant code (*this include but not limited to:* no unused code, logger, debugger, warning, error, memory leak, infinite loop, lagging)
+- Clear documentation that describe your assumptions and design considerations, you can use the wiki in this repo. Don't know how to create wiki? [Create one](https://docs.github.com/en/github/building-a-strong-community/adding-or-editing-wiki-pages)
+- Unit Tests will be evaluated
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+That’s the end of the assignment, we hope you have fun!
+looking forward to your submission.
