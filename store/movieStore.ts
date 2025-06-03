@@ -14,7 +14,7 @@ export const useMovieStore = create<MovieState>((set, get) => ({
   movies: [],
   loading: false,
   page: 1,
-  sort: 'release_date.desc',
+  sort: 'primary_release_date.desc',
   setSort: (sort) => set({ sort, page: 1, movies: [] }),
   fetchMovies: async (append = false) => {
     const { page, sort, movies } = get();
