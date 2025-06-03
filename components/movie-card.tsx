@@ -3,7 +3,12 @@
 import { Card, CardBody, CardFooter, Image } from '@heroui/react';
 import { Movie } from '../types/movie';
 
-const MovieCard = ({ movie }: { movie: Movie }) => {
+type MoviePreview = Pick<
+  Movie,
+  'id' | 'title' | 'poster_path' | 'backdrop_path' | 'popularity'
+>;
+
+const MovieCard = ({ movie }: { movie: MoviePreview }) => {
   const imagePath = movie.poster_path || movie.backdrop_path;
 
   return (
@@ -12,12 +17,15 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
         <Image
           src={`https://image.tmdb.org/t/p/w500${imagePath}`}
           alt={movie.title}
-          width={250}
-          height={375}
+          width={450}
+          height={575}
         />
       </CardBody>
       <CardFooter>
-        <div className='font-bold'>{movie.title}</div>
+        <div className='flex flex-col text-left'>
+          <div className='font-bold'>{movie.title}</div>
+          <div className=''>{movie.popularity}</div>
+        </div>
       </CardFooter>
     </Card>
   );

@@ -23,6 +23,35 @@ export default function Home() {
         </div>
       </div>
       <div className='flex gap-3'>
+        <MovieCard
+          movie={{
+            id: 1,
+            title: 'Something stupid',
+            backdrop_path: '',
+            poster_path: '',
+            popularity: 1,
+          }}
+        />
+        <MovieCard
+          movie={{
+            id: 1,
+            title: 'Something stupid',
+            backdrop_path: '',
+            poster_path: '',
+            popularity: 1,
+          }}
+        />
+        <MovieCard
+          movie={{
+            id: 1,
+            title: 'Something stupid',
+            backdrop_path: '',
+            poster_path: '',
+            popularity: 1,
+          }}
+        />
+      </div>
+      <div className='flex gap-3'>
         <Link
           isExternal
           className={buttonStyles({
